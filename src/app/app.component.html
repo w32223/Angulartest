@@ -1,0 +1,41 @@
+<!--The whole content below can be removed with the new code.-->
+<nav id="nav">
+  <ul id="nav_box">
+    <li class="nav_item"><a routerLink="/rin">首页</a></li>
+    <li class="nav_item"><a routerLink="/first">切换路由一</a></li>
+    <li class="nav_item"><a routerLink="/second">切换路由二</a></li>
+    <li class="nav_item"><a routerLink="/third">切换路由三</a></li>
+  </ul>
+</nav>
+<div id="slide_contain">
+  <ul id="slide_box">
+    <li class="slide_pic"><img src="../assets/images/1.jpg"></li>
+    <li class="slide_pic"><img src="../assets/images/2.jpg"></li>
+    <li class="slide_pic"><img src="../assets/images/3.jpg"></li>
+    <li class="slide_pic"><img src="../assets/images/4.jpg"></li>
+  </ul>
+</div>
+
+<h1 style="text-align: center;">{{title}}</h1><br><br>
+<router-outlet></router-outlet><br><br>
+<h2 style="text-align: center;">{{hero.name}} details!</h2><br>
+<div style="text-align: center;"><label>数据中的id: </label>{{hero.id}}</div>
+<div style="text-align: center;">
+  <label>数据中的name: </label>
+  <input [(ngModel)]="hero.name" placeholder="name">
+</div><br><br>
+
+<h1 style="text-align: center;">My First Attribute Directive</h1>
+
+<h4 style="text-align: center;">选择一个高亮颜色</h4>
+<div style="text-align: center;">
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p style="text-align: center;" [myHighlight]="color">鼠标移动到我身上可见高亮</p>
+<p style="text-align: center;" [myHighlight]="color" defaultColor="violet">也移到我身上试试</p><br><br>
+
+<hero></hero><br><br>
+<hero-list></hero-list>
+
